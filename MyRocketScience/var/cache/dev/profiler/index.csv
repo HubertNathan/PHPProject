@@ -1,0 +1,10 @@
+6fe793,127.0.0.1,GET,http://localhost:8000/vab,1727293712,db215a,404,request
+db215a,127.0.0.1,GET,http://localhost:8000/vab,1727293712,,404,request
+c741b7,127.0.0.1,GET,http://localhost:8000/vab,1727293722,44e509,404,request
+44e509,127.0.0.1,GET,http://localhost:8000/vab,1727293722,,404,request
+161e68,127.0.0.1,GET,http://localhost:8000/,1727293725,,404,request
+e17f21,127.0.0.1,GET,http://localhost:8000/agency,1727293730,,200,request
+d0dd98,127.0.0.1,GET,http://localhost:8000/agency/list,1727293735,,200,request
+a4c3a5,127.0.0.1,GET,http://localhost:8000/favicon.ico,1727293735,f74f43,404,request
+f74f43,127.0.0.1,GET,http://localhost:8000/favicon.ico,1727293735,,404,request
+e51f29,127.0.0.1,GET,http://localhost:8000/agency/list,1727293898,,200,request

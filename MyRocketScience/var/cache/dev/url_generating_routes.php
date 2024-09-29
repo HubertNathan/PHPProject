@@ -17,4 +17,8 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
+    'app_agency' => [[], ['_controller' => 'App\\Controller\\AgencyController::index'], [], [['text', '/agency']], [], [], []],
+    'app_agency_list' => [[], ['_controller' => 'App\\Controller\\AgencyController::listAgencies'], [], [['text', '/agency/list']], [], [], []],
+    'App\Controller\AgencyController::index' => [[], ['_controller' => 'App\\Controller\\AgencyController::index'], [], [['text', '/agency']], [], [], []],
+    'App\Controller\AgencyController::listAgencies' => [[], ['_controller' => 'App\\Controller\\AgencyController::listAgencies'], [], [['text', '/agency/list']], [], [], []],
 ];
