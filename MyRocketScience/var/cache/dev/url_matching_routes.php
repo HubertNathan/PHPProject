@@ -37,6 +37,7 @@ return [
                     .')'
                 .')'
                 .'|/agency/(\\d+)(*:215)'
+                .'|/starship/(\\d+)(*:238)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -48,8 +49,9 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        215 => [
-            [['_route' => 'agency_show', '_controller' => 'App\\Controller\\AgencyController::show'], ['id'], ['GET' => 0], null, false, true, null],
+        215 => [[['_route' => 'agency_show', '_controller' => 'App\\Controller\\AgencyController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        238 => [
+            [['_route' => 'starship_show', '_controller' => 'App\\Controller\\StarshipController::show'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

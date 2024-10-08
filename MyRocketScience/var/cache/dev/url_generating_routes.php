@@ -19,6 +19,8 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'agency_index' => [[], ['_controller' => 'App\\Controller\\AgencyController::index'], [], [['text', '/agency']], [], [], []],
     'agency_show' => [['id'], ['_controller' => 'App\\Controller\\AgencyController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/agency']], [], [], []],
+    'starship_show' => [['id'], ['_controller' => 'App\\Controller\\StarshipController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/starship']], [], [], []],
     'App\Controller\AgencyController::index' => [[], ['_controller' => 'App\\Controller\\AgencyController::index'], [], [['text', '/agency']], [], [], []],
     'App\Controller\AgencyController::show' => [['id'], ['_controller' => 'App\\Controller\\AgencyController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/agency']], [], [], []],
+    'App\Controller\StarshipController::show' => [['id'], ['_controller' => 'App\\Controller\\StarshipController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/starship']], [], [], []],
 ];

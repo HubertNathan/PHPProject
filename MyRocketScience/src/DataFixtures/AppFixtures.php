@@ -51,5 +51,6 @@ class AppFixtures extends Fixture
         yield ["StarCom1","The first interstellar communication system for kerbalkind", "Kerbal Space Agency"];
         yield ["Ariane 6", "Not yet available","European Space Agency"];
         yield ["Death Star","Death Star Mk.321 This time it will work !","The Galactical Empire"];
+        yield ["Star Dreadnought Class","One of the biggest starship of the imperial Army, flee you fools ! IT'S A TRAP !","The Galactical Empire"];
     }
 }
