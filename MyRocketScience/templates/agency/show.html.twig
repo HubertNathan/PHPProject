@@ -1,0 +1,33 @@
+{# ... #}
+{% block title %}<title>{{ Agency.name }}</title>{% endblock %}
+
+{% block body %}
+    <h1>Agency</h1>
+
+       {% dump Agency %}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ Agency.id }}</td>
+            </tr>
+            <tr>
+                <th>Name : </th>
+                <td>{{ Agency.name }}</td>
+            </tr>
+            <tr>
+                <th> Location : </th>
+                <td>{{ Agency.location}}
+            </tr>
+
+        </tbody>
+    </table>
+    {% for starship in Agency.starships %}
+    <li>{{starship.name}}  </li>
+    {% endfor %}
+
+    <a href="{{ path('agency_index') }}">back to list</a>
+
+{% endblock %} {# body #} 
+{# ... #} 
