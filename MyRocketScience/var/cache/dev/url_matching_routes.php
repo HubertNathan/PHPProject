@@ -17,6 +17,7 @@ return [
         '/agency' => [[['_route' => 'Agency List', '_controller' => 'App\\Controller\\AgencyController::index'], null, null, null, false, false, null]],
         '/hangar' => [[['_route' => 'app_hangar_index', '_controller' => 'App\\Controller\\HangarController::index'], null, ['GET' => 0], null, false, false, null]],
         '/hangar/new' => [[['_route' => 'app_hangar_new', '_controller' => 'App\\Controller\\HangarController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/member' => [[['_route' => 'app_member', '_controller' => 'App\\Controller\\MemberController::index'], null, null, null, false, false, null]],
         '/starship' => [[['_route' => 'app_starship_index', '_controller' => 'App\\Controller\\StarshipController::index'], null, ['GET' => 0], null, false, false, null]],
         '/starship/new' => [[['_route' => 'app_starship_new', '_controller' => 'App\\Controller\\StarshipController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
@@ -47,14 +48,14 @@ return [
                         .'|/edit(*:258)'
                         .'|(*:266)'
                     .')'
-                    .'|starship/(\\d+)(*:289)'
+                    .'|(\\d+)/starship/(\\d+)(*:295)'
                 .')'
                 .'|/starship/(?'
                     .'|([^/]++)(?'
-                        .'|/edit(*:327)'
-                        .'|(*:335)'
+                        .'|/edit(*:333)'
+                        .'|(*:341)'
                     .')'
-                    .'|(\\d+)/show(*:354)'
+                    .'|(\\d+)/show(*:360)'
                 .')'
             .')/?$}sDu',
     ],
@@ -71,10 +72,10 @@ return [
         245 => [[['_route' => 'app_hangar_show', '_controller' => 'App\\Controller\\HangarController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         258 => [[['_route' => 'app_hangar_edit', '_controller' => 'App\\Controller\\HangarController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         266 => [[['_route' => 'app_hangar_delete', '_controller' => 'App\\Controller\\HangarController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        289 => [[['_route' => 'app_hangar_starship_show', '_controller' => 'App\\Controller\\HangarController::starshipShow'], ['id'], ['GET' => 0], null, false, true, null]],
-        327 => [[['_route' => 'app_starship_edit', '_controller' => 'App\\Controller\\StarshipController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        335 => [[['_route' => 'app_starship_delete', '_controller' => 'App\\Controller\\StarshipController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        354 => [
+        295 => [[['_route' => 'app_hangar_starship_show', '_controller' => 'App\\Controller\\HangarController::starshipShow'], ['hangarId', 'starshipId'], ['GET' => 0], null, false, true, null]],
+        333 => [[['_route' => 'app_starship_edit', '_controller' => 'App\\Controller\\StarshipController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        341 => [[['_route' => 'app_starship_delete', '_controller' => 'App\\Controller\\StarshipController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        360 => [
             [['_route' => 'app_starship_show', '_controller' => 'App\\Controller\\StarshipController::starshipShow'], ['id'], ['GET' => 0], null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],

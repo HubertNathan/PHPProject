@@ -1,24 +1,24 @@
 {% extends "base.html.twig" %}
-{% block title %}<title>{{ Starship.name }}</title>{% endblock %}
+{% block title %}<title>{{ starship.name }}</title>{% endblock %}
 
 {% block body %}
-    <h1>{{Starship.name}}</h1>
+    <h1>{{starship.name}}</h1>
 
-       {% dump Starship %}
+       {% dump starship %}
 
     <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ Starship.id }}</td>
+                <td>{{ starship.id }}</td>
             </tr>
             <tr>
                 <th>Name</th>
-                <td>{{ Starship.name }}</td>
+                <td>{{ starship.name }}</td>
             </tr>
             <tr>
                 <th>Agency : </th>
-                <td><a href="{{ path('agency_show',{'id':Starship.agency.id})}}">{{ Starship.agency.name }}</a></td>
+                <td><a href="{{ path('agency_show',{'id':starship.agency.id})}}">{{ starship.agency.name }}</a></td>
             </tr>
 
         </tbody>
