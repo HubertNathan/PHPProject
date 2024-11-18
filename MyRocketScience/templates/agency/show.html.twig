@@ -1,11 +1,12 @@
+{% extends "base.html.twig" %}
 {# ... #}
 {% block title %}<title>{{ Agency.name }}</title>{% endblock %}
-
 {% block body %}
-    <h1>Agency</h1>
+    <div class = "header">
+        <h1>Agency</h1>
+    </div>
 
        {% dump Agency %}
-
     <table class="table">
         <tbody>
             <tr>
@@ -24,10 +25,10 @@
         </tbody>
     </table>
     {% for starship in Agency.starships %}
-    <li>{{starship.name}}  </li>
+    <li><a href="{{ path('app_starship_show',{'id':starship.id})}}">{{ starship.name }}</a></li>
     {% endfor %}
 
-    <a href="{{ path('agency_index') }}">back to list</a>
+    <a href="{{ path('Agency List') }}">back to list</a>
 
 {% endblock %} {# body #} 
 {# ... #} 

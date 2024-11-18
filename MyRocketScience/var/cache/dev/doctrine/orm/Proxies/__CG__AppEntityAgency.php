@@ -7,7 +7,7 @@ namespace Proxies\__CG__\App\Entity;
  */
 class Agency extends \App\Entity\Agency implements \Doctrine\ORM\Proxy\InternalProxy
 {
-     use \Symfony\Component\VarExporter\LazyGhostTrait {
+    use \Symfony\Component\VarExporter\LazyGhostTrait {
         initializeLazyObject as private;
         setLazyObjectAsInitialized as public __setInitialized;
         isLazyObjectInitialized as private;
@@ -24,13 +24,15 @@ class Agency extends \App\Entity\Agency implements \Doctrine\ORM\Proxy\InternalP
     private const LAZY_OBJECT_PROPERTY_SCOPES = [
         "\0".parent::class."\0".'id' => [parent::class, 'id', null],
         "\0".parent::class."\0".'location' => [parent::class, 'location', null],
+        "\0".parent::class."\0".'member' => [parent::class, 'member', null],
         "\0".parent::class."\0".'name' => [parent::class, 'name', null],
         "\0".parent::class."\0".'starships' => [parent::class, 'starships', null],
         'id' => [parent::class, 'id', null],
         'location' => [parent::class, 'location', null],
+        'member' => [parent::class, 'member', null],
         'name' => [parent::class, 'name', null],
         'starships' => [parent::class, 'starships', null],
-    ];
+    ];
 
     public function __isInitialized(): bool
     {

@@ -27,6 +27,9 @@ class Agency
     #[ORM\OneToMany(targetEntity: Starship::class, mappedBy: 'agency', orphanRemoval: true)]
     private Collection $starships;
 
+    #[ORM\OneToOne(mappedBy: 'agency', cascade: ['persist', 'remove'])]
+    private ?Member $member = null;
+
     public function __construct()
     {
         $this->starships = new ArrayCollection();
@@ -87,6 +90,19 @@ class Agency
                 $starship->setAgency(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMember(): ?Member
+    {
+        return $this->member;
+    }
+
+    public function setMember(Member $member): static
+    {
+
+        $this->member = $member;
 
         return $this;
     }

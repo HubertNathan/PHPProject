@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AgencyController extends AbstractController
 {
-    #[Route('/agency', name: 'agency_index')]
+    #[Route('/agency', name: 'Agency List')]
     public function index(ManagerRegistry $manager): Response
     {
         $agencyRepository = $manager->getRepository(Agency::class);
@@ -49,12 +49,13 @@ class AgencyController extends AbstractController
     public function show(ManagerRegistry $doctrine, $id){
         $agencyRepo = $doctrine->getRepository(Agency::class);
         $agency = $agencyRepo->find($id);
-        dump($agency); 
+        dump($agency);
         if (!$agency) {
             throw $this->createNotFoundException('This Agency does not exist');
         }
-       
+
         return $this->render('agency/show.html.twig',
-            ['Agency'=>$agency]);        
+            ['Agency'=>$agency]);
     }
+
 }
