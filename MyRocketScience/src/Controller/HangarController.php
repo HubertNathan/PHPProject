@@ -21,9 +21,16 @@ final class HangarController extends AbstractController
     #[Route(name: 'app_hangar_index', methods: ['GET'])]
     public function index(HangarRepository $hangarRepository): Response
     {
+        $member = $this->getUser();
+        if (!$member) return $this->redirectToRoute('app_login');
+        $myHangars = $hangarRepository->findBy(['member' => $member]);
+        $othersHangar = array_diff($hangarRepository->findAll(),$myHangars);
+        $privateHangar = $hangarRepository->findBy(['published'=>'0']);
+        $publicHangars = array_diff($othersHangar,$privateHangar);
+
         return $this->render('hangar/index.html.twig', [
-            'hangars' => $hangarRepository->findAll(),
-        ]);
+            'myHangars' => $myHangars,
+            'publicHangars' => $publicHangars]);
     }
 
     #[Route('/new/{id}', name: 'app_hangar_new', methods: ['GET', 'POST'])]

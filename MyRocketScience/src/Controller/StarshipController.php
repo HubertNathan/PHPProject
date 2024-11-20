@@ -21,8 +21,18 @@ final class StarshipController extends AbstractController
     #[Route(name: 'app_starship_index', methods: ['GET'])]
     public function index(StarshipRepository $starshipRepository): Response
     {
+        $member = $this->getUser();
+        if (!$member){
+            return $this->redirectToRoute('app_login');
+        }
+        if ($this->isGranted('ROLE_ADMIN')) {
+            $starships = $starshipRepository->findAll();
+        }
+        else {
+            $starships = $starshipRepository->findBy(['agency' => $member->getAgency()->getId()]);
+        }
         return $this->render('starship/index.html.twig', [
-            'starships' => $starshipRepository->findAll(),
+            'starships' => $starships,
         ]);
     }
 
@@ -76,6 +86,10 @@ final class StarshipController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $uploadedFile = $form->get('imageFile')->getData();
+            if ($uploadedFile) {
+                print $starship->getImageName();
+            }
             $entityManager->flush();
 
             return $this->redirectToRoute('app_agency_show', ['id'=>$starship->getAgency()->getId()], Response::HTTP_SEE_OTHER);

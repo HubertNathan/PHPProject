@@ -2,6 +2,7 @@
 {# ... #}
 {% block title %}<title>{{ agency.name }}</title>{% endblock %}
 {% block body %}
+<link href="{{ asset('styles/display.css') }}" rel="stylesheet">
     <div class = "header">
         <h1>Agency</h1>
     </div>
@@ -24,13 +25,21 @@
 
         </tbody>
     </table>
-    {% for starship in agency.starships %}
-    <li><a href="{{ path('app_starship_show',{'id':starship.id})}}">{{ starship.name }}</a></li>
-    {% endfor %}
-
-    <a href="{{ path('app_member_show',{'id':agency.member.id}) }}">back to member<br></a>
-    <a href="{{ path('app_starship_new', {'id': agency.id}) }}">Add new</a>
-
+    <div class = displayList>
+        <ul>
+            {% for starship in agency.starships %}
+            <li><a href="{{ path('app_starship_show',{'id':starship.id})}}">{{ starship.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+    <div class="myButton">
+        <a href="{{ path('app_member_show',{'id':agency.member.id}) }}">back to member<br></a>
+    </div>
+    <br><br>
+    <div class = myButton>
+        <a href="{{ path('app_starship_new', {'id': agency.id}) }}">Add new</a>
+    </div>
 
 {% endblock %} {# body #} 
 {# ... #} 

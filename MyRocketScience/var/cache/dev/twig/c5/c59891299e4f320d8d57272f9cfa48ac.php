@@ -70,24 +70,24 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
     ";
         // line 19
         yield from $this->unwrap()->yieldBlock('menus', $context, $blocks);
-        // line 41
+        // line 43
         yield "    <body>
     ";
-        // line 42
+        // line 44
         yield from $this->unwrap()->yieldBlock('header', $context, $blocks);
-        // line 55
+        // line 57
         yield " ";
-        // line 56
+        // line 58
         yield "
     ";
-        // line 57
+        // line 59
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 58
+        // line 60
         yield "    ";
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 63
+        // line 65
         yield " ";
-        // line 64
+        // line 66
         yield "    </body>
 </html>
 ";
@@ -160,13 +160,28 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
         yield $this->extensions['Camurphy\BootstrapMenuBundle\Twig\Extension\MenuExtension']->renderMenu($this->env, "main");
         yield "
                         <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Dropdown</a>
+                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">My Account</a>
                             <ul class=\"dropdown-menu dropdown-menu-end\" aria-labelledby=\"navbarDropdown\">
-                                <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
-                                <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
+                                <li><a class=\"dropdown-item\" href=\"";
+        // line 30
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        yield "\">Login</a></li>
+                                ";
+        // line 31
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) {
+            // line 32
+            yield "                                <li><a class=\"dropdown-item\" href=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_member_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32), "id", [], "any", false, false, false, 32)]), "html", null, true);
+            yield "\">Me</a></li>
                                 <li><hr class=\"dropdown-divider\" /></li>
-                                <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
-                            </ul>
+                                <li><a class=\"dropdown-item\" href=\"";
+            // line 34
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            yield "\">Logout</a></li>
+                                ";
+        }
+        // line 36
+        yield "                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -182,7 +197,7 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
         yield from [];
     }
 
-    // line 42
+    // line 44
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -195,7 +210,7 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 43
+        // line 45
         yield "        <link href=\"";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/header.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
@@ -206,11 +221,11 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
             <div class = \"colHeaderMiddle\" style=\"\">
                 <h1>
                     ";
-        // line 50
-        $context["current_path"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "request", [], "any", false, false, false, 50), "get", ["_route"], "method", false, false, false, 50);
-        // line 51
+        // line 52
+        $context["current_path"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 52, $this->source); })()), "request", [], "any", false, false, false, 52), "get", ["_route"], "method", false, false, false, 52);
+        // line 53
         yield "                    ";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 51, $this->source); })()), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["current_path"]) || array_key_exists("current_path", $context) ? $context["current_path"] : (function () { throw new RuntimeError('Variable "current_path" does not exist.', 53, $this->source); })()), "html", null, true);
         yield "
                 </h1>
             </div>
@@ -225,7 +240,7 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
         yield from [];
     }
 
-    // line 57
+    // line 59
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -248,7 +263,7 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
         yield from [];
     }
 
-    // line 58
+    // line 60
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -261,12 +276,12 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 59
+        // line 61
         yield "        <!-- Bootstrap core JS-->
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js\"></script>
         <!-- Core theme JS-->
         <script src=\"";
-        // line 62
+        // line 64
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/scripts.js"), "html", null, true);
         yield "\"></script>
     ";
@@ -292,7 +307,7 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  270 => 62,  265 => 59,  252 => 58,  229 => 57,  212 => 51,  210 => 50,  199 => 43,  186 => 42,  160 => 26,  152 => 20,  139 => 19,  126 => 16,  121 => 14,  117 => 12,  104 => 11,  91 => 64,  89 => 63,  86 => 58,  84 => 57,  81 => 56,  79 => 55,  77 => 42,  74 => 41,  72 => 19,  69 => 18,  67 => 17,  65 => 11,  53 => 1,);
+        return array (  285 => 64,  280 => 61,  267 => 60,  244 => 59,  227 => 53,  225 => 52,  214 => 45,  201 => 44,  184 => 36,  179 => 34,  173 => 32,  171 => 31,  167 => 30,  160 => 26,  152 => 20,  139 => 19,  126 => 16,  121 => 14,  117 => 12,  104 => 11,  91 => 66,  89 => 65,  86 => 60,  84 => 59,  81 => 58,  79 => 57,  77 => 44,  74 => 43,  72 => 19,  69 => 18,  67 => 17,  65 => 11,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -324,12 +339,14 @@ class __TwigTemplate_462ee08468cdc357c27c9a5dde292f06 extends Template
                     <ul class=\"navbar-nav ms-auto mb-2 mb-lg-0\">
                         {{ render_bootstrap_menu('main') }}
                         <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Dropdown</a>
+                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">My Account</a>
                             <ul class=\"dropdown-menu dropdown-menu-end\" aria-labelledby=\"navbarDropdown\">
-                                <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
-                                <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
+                                <li><a class=\"dropdown-item\" href=\"{{ path('app_login')}}\">Login</a></li>
+                                {% if app.user %}
+                                <li><a class=\"dropdown-item\" href=\"{{ path(\"app_member_show\",{id: app.user.id}) }}\">Me</a></li>
                                 <li><hr class=\"dropdown-divider\" /></li>
-                                <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+                                <li><a class=\"dropdown-item\" href=\"{{ path(\"app_logout\") }}\">Logout</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                     </ul>

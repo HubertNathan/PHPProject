@@ -3,6 +3,7 @@
 {% block title %}Member List{% endblock %}
 
 {% block body %}
+    <link href="{{ asset('styles/display.css') }}" rel="stylesheet">
     <h1>{{ member.username }}'s profile</h1>
 
     <table class="table">
@@ -42,4 +43,8 @@
         {% endfor %}
         </tbody>
     </table>
+    <br>
+    <div class = 'myButton'>
+        <a href="{{ path('app_hangar_new',{'id' : app.user.id}) }}">Create New Hangar</a>
+    </div>
 {% endblock %}

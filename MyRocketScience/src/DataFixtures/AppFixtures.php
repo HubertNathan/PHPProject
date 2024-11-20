@@ -27,7 +27,10 @@ class AppFixtures extends Fixture
     private const STARCOM_1 = "StarCom1";
     private const ARIANE_6 = "Ariane 6";
     private const DEATH_STAR = "Death Star";
+    private const DEATH_STAR_II = "Death Star II";
     private const STAR_DREADNOUGHT = "Star Dreadnought Class";
+    private const ARCTIC_WEATHER_SATELLITE = "Arctic Weather Satellite";
+    private const HERA = "Hera";
 
     public function load(ObjectManager $manager): void
     {
@@ -79,6 +82,8 @@ class AppFixtures extends Fixture
             $ship = new Starship();
             $ship->setName($name);
             $ship->setDescription($description);
+            $ship->setImageName($name.'.png');
+            print $ship->getImageName();
 
             // Retrieve the agency reference
             $agency = $this->getReference($agencyName);
@@ -124,7 +129,10 @@ class AppFixtures extends Fixture
         yield [self::STARCOM_1, "The first interstellar communication system for kerbalkind", self::KSA];
         yield [self::ARIANE_6, "Not yet available", self::ESA];
         yield [self::DEATH_STAR, "Death Star Mk.321 This time it will work!", self::GalacticEmpire];
+        yield [self::DEATH_STAR_II, "Bigger Faster Stronger", self::GalacticEmpire];
         yield [self::STAR_DREADNOUGHT, "One of the biggest starships of the imperial army. Flee you fools! IT'S A TRAP!", self::GalacticEmpire];
+        yield [self::ARCTIC_WEATHER_SATELLITE,"The next mission to track earth Climate",self::ESA];
+        yield [self::HERA,"Let's take an asteroïd to earth",self::ESA];
     }
 
     private function getMembersData(): \Generator
@@ -137,5 +145,6 @@ class AppFixtures extends Fixture
     private function getHangarData(): \Generator
     {
         yield ["Junkyard and Spacecraft Parts Co BAV", 'Jebedhia.Kerman@localhost', true, [self::STARCOM_1]];
+        yield ["My Death Stars", 'DarthVader@localhost', true, [self::DEATH_STAR,self::DEATH_STAR_II]];
     }
 }

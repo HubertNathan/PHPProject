@@ -156,6 +156,10 @@ class __TwigTemplate_03d59a3744b7f993f2445e2d63299088 extends Template
         // line 33
         yield "        </tbody>
     </table>
+    <a href=\"";
+        // line 35
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_new", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "agency", [], "any", false, false, false, 35), "id", [], "any", false, false, false, 35)]), "html", null, true);
+        yield "\">Add new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -187,7 +191,7 @@ class __TwigTemplate_03d59a3744b7f993f2445e2d63299088 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  157 => 33,  148 => 29,  139 => 25,  135 => 24,  130 => 22,  126 => 21,  122 => 20,  119 => 19,  114 => 18,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  161 => 35,  157 => 33,  148 => 29,  139 => 25,  135 => 24,  130 => 22,  126 => 21,  122 => 20,  119 => 19,  114 => 18,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -226,6 +230,7 @@ class __TwigTemplate_03d59a3744b7f993f2445e2d63299088 extends Template
         {% endfor %}
         </tbody>
     </table>
+    <a href=\"{{ path('app_starship_new', {'id': app.user.agency.id }) }}\">Add new</a>
 {% endblock %}
 ", "starship/index.html.twig", "/home/nathan-hubert/Desktop/CSC4101/project/MyRocketScience/templates/starship/index.html.twig");
     }

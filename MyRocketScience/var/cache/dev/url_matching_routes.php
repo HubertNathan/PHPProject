@@ -16,6 +16,8 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/agency' => [[['_route' => 'Agency List', '_controller' => 'App\\Controller\\AgencyController::index'], null, null, null, false, false, null]],
         '/hangar' => [[['_route' => 'app_hangar_index', '_controller' => 'App\\Controller\\HangarController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\LoginController::logout'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/member' => [[['_route' => 'app_member_index', '_controller' => 'App\\Controller\\MemberController::index'], null, ['GET' => 0], null, false, false, null]],
         '/starship' => [[['_route' => 'app_starship_index', '_controller' => 'App\\Controller\\StarshipController::index'], null, ['GET' => 0], null, false, false, null]],
     ],

@@ -85,7 +85,7 @@ class __TwigTemplate_245f7e7863dd8b494cc92562869c3ebb extends Template
         yield from [];
     }
 
-    // line 4
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -98,59 +98,70 @@ class __TwigTemplate_245f7e7863dd8b494cc92562869c3ebb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 5
+        // line 7
         yield "    <h1>";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 5, $this->source); })()), "name", [], "any", false, false, false, 5), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 7, $this->source); })()), "name", [], "any", false, false, false, 7), "html", null, true);
         yield "</h1>
 
        ";
         if ($this->env->isDebug()) {
-            // line 7
-            \Symfony\Component\VarDumper\VarDumper::dump((isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 7, $this->source); })()));
+            // line 9
+            \Symfony\Component\VarDumper\VarDumper::dump((isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 9, $this->source); })()));
         }
-        // line 8
+        // line 10
         yield "
     <table class=\"table\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 13
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 13, $this->source); })()), "id", [], "any", false, false, false, 13), "html", null, true);
+        // line 15
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Name</th>
                 <td>";
-        // line 17
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 17, $this->source); })()), "name", [], "any", false, false, false, 17), "html", null, true);
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 19, $this->source); })()), "name", [], "any", false, false, false, 19), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Agency : </th>
                 <td><a href=\"";
-        // line 21
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_agency_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 21, $this->source); })()), "agency", [], "any", false, false, false, 21), "id", [], "any", false, false, false, 21)]), "html", null, true);
+        // line 23
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_agency_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 23, $this->source); })()), "agency", [], "any", false, false, false, 23), "id", [], "any", false, false, false, 23)]), "html", null, true);
         yield "\">";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 21, $this->source); })()), "agency", [], "any", false, false, false, 21), "name", [], "any", false, false, false, 21), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 23, $this->source); })()), "agency", [], "any", false, false, false, 23), "name", [], "any", false, false, false, 23), "html", null, true);
         yield "</a></td>
             </tr>
             <tr>
                 <th> Edit : </th>
                 <td><a href=\"";
-        // line 25
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 25, $this->source); })()), "agency", [], "any", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
+        // line 27
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 27, $this->source); })()), "agency", [], "any", false, false, false, 27), "id", [], "any", false, false, false, 27)]), "html", null, true);
         yield "\"> EDIT </a></td>
             </tr>
 
         </tbody>
     </table>
-    <h1>Image</h1>
-    <img src=\"";
-        // line 31
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Vich\UploaderBundle\Twig\Extension\UploaderExtensionRuntime')->asset((isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 31, $this->source); })()), "imageFile"), "html", null, true);
-        yield "\"/>
-
+    <p>";
+        // line 32
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 32, $this->source); })()), "description", [], "any", false, false, false, 32), "html", null, true);
+        yield "</p>
+    ";
+        // line 33
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 33, $this->source); })()), "imageName", [], "any", false, false, false, 33)) {
+            // line 34
+            yield "        <h1>Image</h1>
+        <img src=\"";
+            // line 35
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Vich\UploaderBundle\Twig\Extension\UploaderExtensionRuntime')->asset((isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 35, $this->source); })()), "imageFile"), "html", null, true);
+            yield "\"/>
+    ";
+        }
+        // line 37
+        yield "
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -182,13 +193,15 @@ class __TwigTemplate_245f7e7863dd8b494cc92562869c3ebb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  151 => 31,  142 => 25,  133 => 21,  126 => 17,  119 => 13,  112 => 8,  109 => 7,  102 => 5,  89 => 4,  64 => 2,  41 => 1,);
+        return array (  164 => 37,  159 => 35,  156 => 34,  154 => 33,  150 => 32,  142 => 27,  133 => 23,  126 => 19,  119 => 15,  112 => 10,  109 => 9,  102 => 7,  89 => 6,  64 => 2,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends \"base.html.twig\" %}
 {% block title %}<title>{{ starship.name }}</title>{% endblock %}
+
+
 
 {% block body %}
     <h1>{{starship.name}}</h1>
@@ -216,8 +229,11 @@ class __TwigTemplate_245f7e7863dd8b494cc92562869c3ebb extends Template
 
         </tbody>
     </table>
-    <h1>Image</h1>
-    <img src=\"{{ vich_uploader_asset(starship, 'imageFile') }}\"/>
+    <p>{{ starship.description }}</p>
+    {% if starship.imageName %}
+        <h1>Image</h1>
+        <img src=\"{{ vich_uploader_asset(starship, 'imageFile') }}\"/>
+    {% endif %}
 
 {% endblock %} {# body #} 
 {# ... #} 

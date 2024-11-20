@@ -99,69 +99,80 @@ class __TwigTemplate_f50c4eaa938ff02f517dbad339d4f400 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
-        yield "    <div class = \"header\">
+        yield "<link href=\"";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/display.css"), "html", null, true);
+        yield "\" rel=\"stylesheet\">
+    <div class = \"header\">
         <h1>Agency</h1>
     </div>
 
        ";
         if ($this->env->isDebug()) {
-            // line 9
-            \Symfony\Component\VarDumper\VarDumper::dump((isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 9, $this->source); })()));
+            // line 10
+            \Symfony\Component\VarDumper\VarDumper::dump((isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 10, $this->source); })()));
         }
-        // line 10
+        // line 11
         yield "    <table class=\"table\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 14
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 14, $this->source); })()), "id", [], "any", false, false, false, 14), "html", null, true);
+        // line 15
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Name : </th>
                 <td>";
-        // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 18, $this->source); })()), "name", [], "any", false, false, false, 18), "html", null, true);
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 19, $this->source); })()), "name", [], "any", false, false, false, 19), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th> Location : </th>
                 <td>";
-        // line 22
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 22, $this->source); })()), "location", [], "any", false, false, false, 22), "html", null, true);
+        // line 23
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 23, $this->source); })()), "location", [], "any", false, false, false, 23), "html", null, true);
         yield "
             </tr>
 
         </tbody>
     </table>
-    ";
-        // line 27
+    <div class = displayList>
+        <ul>
+            ";
+        // line 30
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 27, $this->source); })()), "starships", [], "any", false, false, false, 27));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 30, $this->source); })()), "starships", [], "any", false, false, false, 30));
         foreach ($context['_seq'] as $context["_key"] => $context["starship"]) {
-            // line 28
-            yield "    <li><a href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["starship"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            // line 31
+            yield "            <li><a href=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["starship"], "id", [], "any", false, false, false, 31)]), "html", null, true);
             yield "\">";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["starship"], "name", [], "any", false, false, false, 28), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["starship"], "name", [], "any", false, false, false, 31), "html", null, true);
             yield "</a></li>
-    ";
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['starship'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
-        yield "
-    <a href=\"";
-        // line 31
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_member_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 31, $this->source); })()), "member", [], "any", false, false, false, 31), "id", [], "any", false, false, false, 31)]), "html", null, true);
+        // line 33
+        yield "        </ul>
+    </div>
+    <br>
+    <div class=\"myButton\">
+        <a href=\"";
+        // line 37
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_member_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 37, $this->source); })()), "member", [], "any", false, false, false, 37), "id", [], "any", false, false, false, 37)]), "html", null, true);
         yield "\">back to member<br></a>
-    <a href=\"";
-        // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_new", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 32, $this->source); })()), "id", [], "any", false, false, false, 32)]), "html", null, true);
+    </div>
+    <br><br>
+    <div class = myButton>
+        <a href=\"";
+        // line 41
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_new", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["agency"]) || array_key_exists("agency", $context) ? $context["agency"] : (function () { throw new RuntimeError('Variable "agency" does not exist.', 41, $this->source); })()), "id", [], "any", false, false, false, 41)]), "html", null, true);
         yield "\">Add new</a>
-
+    </div>
 
 ";
         
@@ -194,7 +205,7 @@ class __TwigTemplate_f50c4eaa938ff02f517dbad339d4f400 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  162 => 32,  158 => 31,  155 => 30,  144 => 28,  140 => 27,  132 => 22,  125 => 18,  118 => 14,  112 => 10,  109 => 9,  102 => 5,  89 => 4,  64 => 3,  41 => 1,);
+        return array (  173 => 41,  166 => 37,  160 => 33,  149 => 31,  145 => 30,  135 => 23,  128 => 19,  121 => 15,  115 => 11,  112 => 10,  102 => 5,  89 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -203,6 +214,7 @@ class __TwigTemplate_f50c4eaa938ff02f517dbad339d4f400 extends Template
 {# ... #}
 {% block title %}<title>{{ agency.name }}</title>{% endblock %}
 {% block body %}
+<link href=\"{{ asset('styles/display.css') }}\" rel=\"stylesheet\">
     <div class = \"header\">
         <h1>Agency</h1>
     </div>
@@ -225,13 +237,21 @@ class __TwigTemplate_f50c4eaa938ff02f517dbad339d4f400 extends Template
 
         </tbody>
     </table>
-    {% for starship in agency.starships %}
-    <li><a href=\"{{ path('app_starship_show',{'id':starship.id})}}\">{{ starship.name }}</a></li>
-    {% endfor %}
-
-    <a href=\"{{ path('app_member_show',{'id':agency.member.id}) }}\">back to member<br></a>
-    <a href=\"{{ path('app_starship_new', {'id': agency.id}) }}\">Add new</a>
-
+    <div class = displayList>
+        <ul>
+            {% for starship in agency.starships %}
+            <li><a href=\"{{ path('app_starship_show',{'id':starship.id})}}\">{{ starship.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+    <div class=\"myButton\">
+        <a href=\"{{ path('app_member_show',{'id':agency.member.id}) }}\">back to member<br></a>
+    </div>
+    <br><br>
+    <div class = myButton>
+        <a href=\"{{ path('app_starship_new', {'id': agency.id}) }}\">Add new</a>
+    </div>
 
 {% endblock %} {# body #} 
 {# ... #} ", "agency/show.html.twig", "/home/nathan-hubert/Desktop/CSC4101/project/MyRocketScience/templates/agency/show.html.twig");

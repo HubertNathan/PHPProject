@@ -1,0 +1,95 @@
+.displayList ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0 20px; /* Horizontal padding */
+    margin: 0; /* Reset default margins */
+}
+
+.displayList li {
+    position: relative; /* Enable positioning of pseudo-elements */
+    margin-bottom: 6px; /* Consistent spacing between items */
+}
+
+.displayList li:last-child {
+    margin-bottom: 0; /* No margin after the last item */
+}
+
+.displayList li::before {
+    content: "★"; /* Star as bullet point */
+    color: aliceblue; /* Star color */
+    font-size: 1.2em; /* Adjust size */
+    margin-right: 10px; /* Space between star and text */
+}
+
+.displayList a {
+    color: aliceblue; /* Link text color */
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    display: inline-block; /* Prevent vertical shifting */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    line-height: 1.2; /* Stabilize link height */
+    vertical-align: middle; /* Align inline elements consistently */
+}
+
+.displayList a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Underline positioning */
+    width: 0;
+    height: 2px;
+    background-color: aliceblue; /* Underline color */
+    transition: width 0.3s ease; /* Expanding effect */
+}
+
+.displayList a:hover {
+    transform: translate3d(5px, 0, 0); /* Right shift on hover without vertical shift */
+}
+
+.displayList a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+.myButton {
+    /* Basic button styling */
+    padding: 10px 20px; /* Slight padding up and down */
+    background-color: black; /* Pitch black background */
+    color: aliceblue; /* Text in Alice Blue */
+    border: 2px solid black; /* Black outline */
+    border-radius: 5px; /* Optional for rounded edges */
+    font-family: Arial, sans-serif; /* Choose a clean font */
+    font-size: 16px; /* Base text size */
+    display: inline-block; /* Size proportional to text */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* For positioning pseudo-elements */
+    overflow: hidden; /* Ensure animation stays within bounds */
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.myButton::after {
+    /* Dotted underline effect */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px; /* Height of the underline */
+    width: 100%; /* Full width initially */
+    background: repeating-linear-gradient(90deg, black 0, black 2px, transparent 2px, transparent 4px);
+    transform: translateX(-100%); /* Start hidden */
+    transition: transform 0.3s ease;
+}
+
+.myButton:hover {
+    transform: translateX(5px); /* Slide slightly to the left */
+    background-color: aliceblue; /* Swap colors */
+    color: black; /* Text becomes black */
+    border: 2px solid black; /* Retain black outline */
+}
+
+.myButton:hover::after {
+    transform: translateX(0); /* Slide underline into view */
+}
+
+.myButton a {
+    color: inherit; /* Ensure the link inherits the text color */
+    text-decoration: none; /* Remove underline for link text */
+}

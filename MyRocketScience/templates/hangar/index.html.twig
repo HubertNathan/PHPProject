@@ -3,19 +3,47 @@
 {% block title %}Hangar index{% endblock %}
 
 {% block body %}
-    <h1>Hangar index</h1>
+    <h1>My Hangars</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Name</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for hangar in hangars %}
+        {% for hangar in myHangars %}
             <tr>
                 <td>{{ hangar.id }}</td>
+                <td>{{ hangar.name }}</td>
+                <td>
+                    <a href="{{ path('app_hangar_show', {'id': hangar.id}) }}">show</a>
+                    <a href="{{ path('app_hangar_edit', {'id': hangar.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br><h1>Other's Public Hangar</h1><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for hangar in publicHangars %}
+            <tr>
+                <td>{{ hangar.id }}</td>
+                <td>{{ hangar.name }}</td>
                 <td>
                     <a href="{{ path('app_hangar_show', {'id': hangar.id}) }}">show</a>
                     <a href="{{ path('app_hangar_edit', {'id': hangar.id}) }}">edit</a>

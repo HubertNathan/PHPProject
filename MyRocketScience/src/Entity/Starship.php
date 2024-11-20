@@ -35,7 +35,7 @@ class Starship
     private Collection $hangars;
 
 
-    #[Vich\UploadableField(mapping: 'pastes', fileNameProperty: 'imageName', size: 'imageSize')]
+    #[Vich\UploadableField(mapping: 'starships', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -154,7 +154,7 @@ class Starship
         return $this->imageName;
     }
 
-    public function setImageName(string $imageName): static
+    public function setImageName(?string $imageName): self
     {
         $this->imageName = $imageName;
 

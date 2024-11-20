@@ -5,6 +5,9 @@ bootstrap_menu:
   menus:
     main:
       items:
-        agency:
-          label: 'Agency'
-          route: 'Agency List'
+        hangar:
+          label: 'See Hangars'
+          route: 'app_hangar_index'
+        starship:
+          label: 'See Starships'
+          route: 'app_starship_index'
