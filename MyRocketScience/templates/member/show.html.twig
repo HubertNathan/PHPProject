@@ -3,26 +3,41 @@
 {% block title %}Member List{% endblock %}
 
 {% block body %}
-    <h1>Member List</h1>
+    <h1>{{ member.username }}'s profile</h1>
 
     <table class="table">
         <thead>
         <tr>
             <th>Id</th>
+            <th>username</th>
             <th>email</th>
         </tr>
         </thead>
         <tbody>
-        {% for member in members %}
             <tr>
                 <td>{{ member.id }}</td>
+                <td>{{ member.username }}</td>
                 <td>{{ member.email }}</td>
                 <td>
                 </td>
             </tr>
-        {% else %}
+        </tbody>
+    </table>
+    <a href="{{ path('app_agency_show', {'id' : member.agency.id}) }}"> my agency </a>
+    <br><br><br><br>
+    <h1>{{ member.username }}'s Hangars</h1>
+    <table class = 'table'>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>hangar</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for hangar in member.hangars %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td>{{ hangar.id }}</td>
+                <td><a href="{{ path('app_hangar_show',{'id' : hangar.id}) }}">{{ hangar.name }}</a></td>
             </tr>
         {% endfor %}
         </tbody>

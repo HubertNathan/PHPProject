@@ -30,6 +30,10 @@ class Agency
     #[ORM\OneToOne(mappedBy: 'agency', cascade: ['persist', 'remove'])]
     private ?Member $member = null;
 
+    public function __toString(): string
+    {
+        return $this->name;
+    }
     public function __construct()
     {
         $this->starships = new ArrayCollection();

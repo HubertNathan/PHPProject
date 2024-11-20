@@ -15,7 +15,7 @@
             <div class = displayList>
                 <ul>
                     {% for agency in agencyRepo %}
-                    <li> <a href="{{ path('agency_show',{'id':agency.id})}}">{{ agency.name}}</li>
+                    <li> <a href="{{ path('app_agency_show',{'id':agency.id})}}">{{ agency.name}}</li>
                     {% endfor %}
                 </ul>
             </div>

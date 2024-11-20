@@ -16,10 +16,8 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/agency' => [[['_route' => 'Agency List', '_controller' => 'App\\Controller\\AgencyController::index'], null, null, null, false, false, null]],
         '/hangar' => [[['_route' => 'app_hangar_index', '_controller' => 'App\\Controller\\HangarController::index'], null, ['GET' => 0], null, false, false, null]],
-        '/hangar/new' => [[['_route' => 'app_hangar_new', '_controller' => 'App\\Controller\\HangarController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/member' => [[['_route' => 'app_member', '_controller' => 'App\\Controller\\MemberController::index'], null, null, null, false, false, null]],
+        '/member' => [[['_route' => 'app_member_index', '_controller' => 'App\\Controller\\MemberController::index'], null, ['GET' => 0], null, false, false, null]],
         '/starship' => [[['_route' => 'app_starship_index', '_controller' => 'App\\Controller\\StarshipController::index'], null, ['GET' => 0], null, false, false, null]],
-        '/starship/new' => [[['_route' => 'app_starship_new', '_controller' => 'App\\Controller\\StarshipController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -43,19 +41,22 @@ return [
                 .')'
                 .'|/agency/(\\d+)(*:215)'
                 .'|/hangar/(?'
+                    .'|new/([^/]++)(*:246)'
                     .'|([^/]++)(?'
-                        .'|(*:245)'
-                        .'|/edit(*:258)'
-                        .'|(*:266)'
+                        .'|(*:265)'
+                        .'|/edit(*:278)'
+                        .'|(*:286)'
                     .')'
-                    .'|(\\d+)/starship/(\\d+)(*:295)'
+                    .'|(\\d+)/starship/(\\d+)(*:315)'
                 .')'
+                .'|/member/(\\d+)(*:337)'
                 .'|/starship/(?'
+                    .'|new/([^/]++)(*:370)'
                     .'|([^/]++)(?'
-                        .'|/edit(*:333)'
-                        .'|(*:341)'
+                        .'|/edit(*:394)'
+                        .'|(*:402)'
                     .')'
-                    .'|(\\d+)/show(*:360)'
+                    .'|(\\d+)/show(*:421)'
                 .')'
             .')/?$}sDu',
     ],
@@ -68,14 +69,17 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        215 => [[['_route' => 'agency_show', '_controller' => 'App\\Controller\\AgencyController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        245 => [[['_route' => 'app_hangar_show', '_controller' => 'App\\Controller\\HangarController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        258 => [[['_route' => 'app_hangar_edit', '_controller' => 'App\\Controller\\HangarController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        266 => [[['_route' => 'app_hangar_delete', '_controller' => 'App\\Controller\\HangarController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        295 => [[['_route' => 'app_hangar_starship_show', '_controller' => 'App\\Controller\\HangarController::starshipShow'], ['hangarId', 'starshipId'], ['GET' => 0], null, false, true, null]],
-        333 => [[['_route' => 'app_starship_edit', '_controller' => 'App\\Controller\\StarshipController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        341 => [[['_route' => 'app_starship_delete', '_controller' => 'App\\Controller\\StarshipController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        360 => [
+        215 => [[['_route' => 'app_agency_show', '_controller' => 'App\\Controller\\AgencyController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        246 => [[['_route' => 'app_hangar_new', '_controller' => 'App\\Controller\\HangarController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        265 => [[['_route' => 'app_hangar_show', '_controller' => 'App\\Controller\\HangarController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        278 => [[['_route' => 'app_hangar_edit', '_controller' => 'App\\Controller\\HangarController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        286 => [[['_route' => 'app_hangar_delete', '_controller' => 'App\\Controller\\HangarController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        315 => [[['_route' => 'app_hangar_starship_show', '_controller' => 'App\\Controller\\HangarController::starshipShow'], ['hangarId', 'starshipId'], ['GET' => 0], null, false, true, null]],
+        337 => [[['_route' => 'app_member_show', '_controller' => 'App\\Controller\\MemberController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        370 => [[['_route' => 'app_starship_new', '_controller' => 'App\\Controller\\StarshipController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        394 => [[['_route' => 'app_starship_edit', '_controller' => 'App\\Controller\\StarshipController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        402 => [[['_route' => 'app_starship_delete', '_controller' => 'App\\Controller\\StarshipController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        421 => [
             [['_route' => 'app_starship_show', '_controller' => 'App\\Controller\\StarshipController::starshipShow'], ['id'], ['GET' => 0], null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],

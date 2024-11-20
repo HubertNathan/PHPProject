@@ -45,7 +45,7 @@ class AgencyController extends AbstractController
     //         array('Content-Type' => 'text/html')
     //     );
     //}
-    #[Route(path: '/agency/{id}', name: 'agency_show', requirements: ['id' => '\d+'], methods: ['GET'])]
+    #[Route(path: '/agency/{id}', name: 'app_agency_show', requirements: ['id' => '\d+'], methods: ['GET'])]
     public function show(ManagerRegistry $doctrine, $id){
         $agencyRepo = $doctrine->getRepository(Agency::class);
         $agency = $agencyRepo->find($id);
@@ -55,7 +55,7 @@ class AgencyController extends AbstractController
         }
 
         return $this->render('agency/show.html.twig',
-            ['Agency'=>$agency]);
+            ['agency'=>$agency]);
     }
 
 }

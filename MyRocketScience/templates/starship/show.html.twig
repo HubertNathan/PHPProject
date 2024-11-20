@@ -18,7 +18,11 @@
             </tr>
             <tr>
                 <th>Agency : </th>
-                <td><a href="{{ path('agency_show',{'id':starship.agency.id})}}">{{ starship.agency.name }}</a></td>
+                <td><a href="{{ path('app_agency_show',{'id':starship.agency.id})}}">{{ starship.agency.name }}</a></td>
+            </tr>
+            <tr>
+                <th> Edit : </th>
+                <td><a href="{{ path('app_starship_edit',{'id':starship.agency.id})}}"> EDIT </a></td>
             </tr>
 
         </tbody>
