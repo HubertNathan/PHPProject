@@ -54,11 +54,12 @@ class AppFixtures extends Fixture
 
     public function loadMembers(ObjectManager $manager): void
     {
-        foreach ($this->getMembersData() as [$email, $plainPassword, $agencyName]) {
+        foreach ($this->getMembersData() as [$email,$username, $plainPassword, $agencyName]) {
             $user = new Member();
             $password = $this->hasher->hashPassword($user, $plainPassword);
             $user->setEmail($email);
             $user->setPassword($password);
+            $user->setUsername($username);
 
             // Retrieve the agency reference
             $agency = $this->getReference($agencyName);
@@ -93,18 +94,17 @@ class AppFixtures extends Fixture
 
     public function loadHangars(ObjectManager $manager): void
     {
-        foreach ($this->getHangarData() as [$name, $ownerEmail, $starshipNames]) {
+        foreach ($this->getHangarData() as [$name, $memberEmail, $published, $starshipNames]) {
             $hangar = new Hangar();
             $hangar->setName($name);
+            $hangar->setPublished($published);
 
-            // Retrieve the owner reference
-            $owner = $this->getReference($ownerEmail);
+            $owner = $this->getReference($memberEmail);
             $hangar->setMember($owner);
 
-            // Add starships to the hangar
             foreach ($starshipNames as $starshipName) {
                 $starship = $this->getReference($starshipName);
-                $hangar->addStarship($starship); // Assuming the Hangar entity has an `addStarship` method
+                $hangar->addStarship($starship);
             }
 
             $manager->persist($hangar);
@@ -129,13 +129,13 @@ class AppFixtures extends Fixture
 
     private function getMembersData(): \Generator
     {
-        yield ['DarthVader@localhost', '123456', self::GalacticEmpire];
-        yield ['Jebedhia.Kerman@localhost', '123456', self::KSA];
-        yield ['Josef.Aschbacher@localhost', '123456', self::ESA];
+        yield ['DarthVader@localhost','SithFleetLord', '123456', self::GalacticEmpire];
+        yield ['Jebedhia.Kerman@localhost','Jeb', '123456', self::KSA];
+        yield ['Josef.Aschbacher@localhost','CosmicAsch', '123456', self::ESA];
     }
 
     private function getHangarData(): \Generator
     {
-        yield ["Junkyard and Spacecraft Parts Co BAV", 'Jebedhia.Kerman@localhost', [self::STARCOM_1]];
+        yield ["Junkyard and Spacecraft Parts Co BAV", 'Jebedhia.Kerman@localhost', true, [self::STARCOM_1]];
     }
 }
