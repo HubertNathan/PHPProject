@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Hangar{% endblock %}
+
+{% block body %}
+    <h1>Edit Hangar</h1>
+
+    {{ include('hangar/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_hangar_index') }}">back to list</a>
+
+    {{ include('hangar/_delete_form.html.twig') }}
+{% endblock %}

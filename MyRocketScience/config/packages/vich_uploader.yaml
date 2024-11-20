@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        pastes:
+            uri_prefix: /images/starships
+            upload_destination: '%kernel.project_dir%/public/images/starships'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

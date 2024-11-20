@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hangar{% endblock %}
+
+{% block body %}
+    <h1>Hangar</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ hangar.id }}</td>
+            </tr>
+            <tr>
+                <th>Starships</th>
+                <td>
+                    <ul>
+                        {% for starship in hangar.starships %}
+                            <li>
+                                <a href="{{ path( 'app_hangar_starship_show',
+                                    {
+                                        'hangarId': hangar.id,
+                                        'starshipId' : starship.id
+                                    }
+                                ) }}">{{ starship.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_hangar_index') }}">back to list</a>
+
+    <a href="{{ path('app_hangar_edit', {'id': hangar.id}) }}">edit</a>
+
+    {{ include('hangar/_delete_form.html.twig') }}
+{% endblock %}

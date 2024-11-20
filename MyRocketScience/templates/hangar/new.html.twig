@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Hangar{% endblock %}
+
+{% block body %}
+    <h1>Create new Hangar</h1>
+
+    {{ include('hangar/_form.html.twig') }}
+
+    <a href="{{ path('app_hangar_index') }}">back to list</a>
+{% endblock %}

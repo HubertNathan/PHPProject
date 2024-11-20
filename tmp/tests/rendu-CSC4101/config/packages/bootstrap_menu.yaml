@@ -1,0 +1,10 @@
+bootstrap_menu:
+  version: 5 # Optional, defaults to Bootstrap 5
+  dropdown_active_style: false # Optional, defaults to false
+  dropdown_item_active_style: false # Optional, defaults to false
+  menus:
+    main:
+      items:
+        agency:
+          label: 'Agency'
+          route: 'Agency List'

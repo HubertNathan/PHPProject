@@ -1,0 +1,33 @@
+.example-wrapper { margin: 1em auto; width: 95%; font: 18px/1.5 sans-serif; }
+.rowHeader{
+    display: flex;
+    padding: 20px;
+    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXkyaDRiMjllaHBwcWo2M2ZtNmJmcnU5c3A4Nms2bWs3eXhtNWhsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FlodpfQUBSp20/giphy.webp");
+    background-size: 20% auto;
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: underline dotted aliceblue;
+    text-underline: aliceblue;
+}
+.colHeaderSide {
+    flex: 25%
+}
+.colHeaderMiddle {
+    padding-left: 30%; flex: 75%
+}
+.AList a {
+    color: aliceblue;
+    text-decoration: underline dotted aliceblue;
+    background: #555555;
+}
+
+ul {
+    color: white;
+    list-style-type: disc;
+    background: #333333;
+    padding: 20px
+}
+li .AList{
+    background: #555555;
+    padding: 5px;
+}

@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block head%}
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %}
+            {% set current_path = app.request.get('') %}
+            {{ current_path }}
+        {% endblock %}</title>
+    {% block stylesheets %}
+    {%  endblock %}
+</head>
+{% endblock %}
+{% block body %}
+    <body>
+        <div class="example-wrapper">
+            <link type="text/css" rel="stylesheet" {{ asset('/styles/index.css') }}>
+            <h1>Here's the agency list!</h1>
+            <ul>
+                {% for agency in agencyRepo %}
+                <li class="AList"> <a href="{{ path('agency_show',{'id':agency.id})}}">{{ agency.name}}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+</body>
+{% endblock %}

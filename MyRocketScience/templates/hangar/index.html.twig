@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hangar index{% endblock %}
+
+{% block body %}
+    <h1>Hangar index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hangar in hangars %}
+            <tr>
+                <td>{{ hangar.id }}</td>
+                <td>
+                    <a href="{{ path('app_hangar_show', {'id': hangar.id}) }}">show</a>
+                    <a href="{{ path('app_hangar_edit', {'id': hangar.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
