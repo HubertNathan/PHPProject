@@ -9,6 +9,8 @@ use App\Repository\StarshipRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FileUploadError;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -33,10 +35,24 @@ final class StarshipController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $starship->getImageFile();
+            if($imageFile) {
+                $mimetype = $imageFile->getMimeType();
+                $starship->setContentType($mimetype);
+            }
             $entityManager->persist($starship);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_agency_show', ['id'=>$agency->getId()], Response::HTTP_SEE_OTHER);
+        }
+        else if ($form->isSubmitted()) {
+            $errors = $form->getErrors();
+            foreach ($errors as $error) {
+                dump($error);
+                if ($error instanceof FileUploadError) {
+                    $form->addError($error);
+                }
+            }
         }
 
         return $this->render('starship/new.html.twig', [

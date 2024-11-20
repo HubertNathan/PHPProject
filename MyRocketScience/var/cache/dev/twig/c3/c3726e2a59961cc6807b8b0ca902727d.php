@@ -145,6 +145,11 @@ class __TwigTemplate_245f7e7863dd8b494cc92562869c3ebb extends Template
 
         </tbody>
     </table>
+    <h1>Image</h1>
+    <img src=\"";
+        // line 31
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Vich\UploaderBundle\Twig\Extension\UploaderExtensionRuntime')->asset((isset($context["starship"]) || array_key_exists("starship", $context) ? $context["starship"] : (function () { throw new RuntimeError('Variable "starship" does not exist.', 31, $this->source); })()), "imageFile"), "html", null, true);
+        yield "\"/>
 
 ";
         
@@ -177,7 +182,7 @@ class __TwigTemplate_245f7e7863dd8b494cc92562869c3ebb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  142 => 25,  133 => 21,  126 => 17,  119 => 13,  112 => 8,  109 => 7,  102 => 5,  89 => 4,  64 => 2,  41 => 1,);
+        return array (  151 => 31,  142 => 25,  133 => 21,  126 => 17,  119 => 13,  112 => 8,  109 => 7,  102 => 5,  89 => 4,  64 => 2,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -211,6 +216,8 @@ class __TwigTemplate_245f7e7863dd8b494cc92562869c3ebb extends Template
 
         </tbody>
     </table>
+    <h1>Image</h1>
+    <img src=\"{{ vich_uploader_asset(starship, 'imageFile') }}\"/>
 
 {% endblock %} {# body #} 
 {# ... #} 
